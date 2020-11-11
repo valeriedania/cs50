@@ -8,21 +8,20 @@
 int main (void)
 {
    char str[100];
-   int length = 0, words = 1, i = 0, sent = 0, grade = 1;
+   int letters = 0, words = 1, i = 0, sent = 0, grade = 1;
 
         //Prompt user for a text
         string text = get_string("Text:");
-        
-        //Loop until the end of string
-        while (text[i] != '\0')
-        {
-           //Count the number of letters except space
-           if (text[i] != ' ')
-           {
-               length++;
-           }
+
+        //Count the number of letters except space
+         for(i = 0; i < strlen(text); i++)
+          {
+           if (text[i] != ' ' && text[i] != '!' && text[i] != '?' && text[i] != ';' && text[i] != ',' && text[i] != '.')
+
+               letters++;
+             
            //Check whether current character is a space, new line or tab
-           else if (text[i] == ' ' || text[i] == '\n' || text[i] == '\t')
+           if (text[i] == ' ' || text[i] == '\n' || text[i] == '\t')
            {
                words++;
            }
@@ -31,12 +30,12 @@ int main (void)
            {
               sent++;
            }
-           i++;
-        }
+           
+          }
           //Print grade level using Coleman Liau index
-          grade = round(0.0588 * 100*(length/words) - 0.296 * 100*(sent/words) - 15.8);
+          grade = round(0.0588 * 100*(letters/words) - 0.296 * 100*(sent/words) - 15.8);
 
-          //Check if grade is less than 1 or greater than 16
+         //Check if grade is less than 1 or greater than 16
           if (grade < 1)
           {
               printf("Before Grade 1\n");
@@ -47,4 +46,6 @@ int main (void)
           }
           else
               printf("Grade %i\n", grade);
+        
+
 }
