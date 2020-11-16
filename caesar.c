@@ -20,11 +20,7 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
       }
-      //Prompt user for plaintext
-      else
-      {
-         string plaintext = get_string("plaintext:");
-      }
+      
      
       //Verify that argv is an int or else convert
       argv_length = strlen(argv[1]);
@@ -43,8 +39,10 @@ int main(int argc, string argv[])
 
     }
   
-    //Obtain the length of plaintext
-    string plaintext = 0;
+ 
+    //Prompt user for plaintext
+      
+    string plaintext = get_string("plaintext:");
     plaintext_length = strlen(plaintext);
     
     //Use a loop to iterate over every char in text
