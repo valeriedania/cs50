@@ -11,7 +11,7 @@ int main(int argc, string argv[])
 
 {
     //Declare variables
-    int argv_length, key, j, plaintext_length;
+    int argv_length, key, plaintext_length;
     string ciphertext;
     
       //Check single command-line argument
@@ -46,26 +46,26 @@ int main(int argc, string argv[])
     plaintext_length = strlen(plaintext);
     
     //Use a loop to iterate over every char in text
-    for (j = 0; j < plaintext_length; j++)
+    for (int i = 0; i < plaintext_length; i++)
     {
       //Check if char is lowercase or uppercase and a letter
-      if (isalpha(plaintext[j]))
+      if (isalpha(plaintext[i]))
       {
         
-        if (isupper(plaintext[j]))
+        if (isupper(plaintext[i]))
         {
-        printf("ciphertext: %c", (((plaintext[j] - 65) + key) % 26) + 65);
+        printf("ciphertext: %c", (((plaintext[i] - 65) + key) % 26) + 65);
         
         }
         else  
         {
-        printf("ciphertext: %c", (((plaintext[j] - 97) + key) % 26) + 97);
+        printf("ciphertext: %c", (((plaintext[i] - 97) + key) % 26) + 97);
         }
       
       }
        else 
        {
-        printf("ciphertext: %c", (plaintext[j]));
+        printf("ciphertext: %c", (plaintext[i]));
        }
       
     }
