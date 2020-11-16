@@ -48,15 +48,16 @@ int main(int argc, string argv[])
     //Use a loop to iterate over every char in text
     for (int i = 0; i < plaintext_length; i++)
     {
-      //Check if char is lowercase or uppercase and a letter
+      //check if char is a letter
       if (isalpha(plaintext[i]))
       {
-        
+        //check for uppercase
         if (isupper(plaintext[i]))
         {
         printf("ciphertext: %c", (((plaintext[i] - 65) + key) % 26) + 65);
         
         }
+        //same for lowercase
         else  
         {
         printf("ciphertext: %c", (((plaintext[i] - 97) + key) % 26) + 97);
