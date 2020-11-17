@@ -46,13 +46,13 @@ int main(int argc, string argv[])
     plaintext_length = strlen(plaintext);
     
     //Use a loop to iterate over every char in text
-    for (int i = 0; i < plaintext_length; i++)
+    for (int i = 0; plaintext[i] != '\0' ; i++)
     {
       //check if char is a letter
-      if (isalpha(plaintext[i]))
+      if (isalpha(plaintext[i]) != 0)
       {
         //check for uppercase
-        if (isupper(plaintext[i]))
+        if (isupper(plaintext[i]) != 0)
         {
         printf("%c", (((plaintext[i] - 65) + key) % 26) + 65);
         
@@ -70,6 +70,6 @@ int main(int argc, string argv[])
        }
       
     }
-    
+    printf("\n");
     return 0;
 }
