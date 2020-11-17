@@ -46,6 +46,7 @@ int main(int argc, string argv[])
     plaintext_length = strlen(plaintext);
     
     //Use a loop to iterate over every char in text
+    printf("ciphertext: ");
     for (int i = 0; plaintext[i] != '\0' ; i++)
     {
       //check if char is a letter
