@@ -54,19 +54,19 @@ int main(int argc, string argv[])
         //check for uppercase
         if (isupper(plaintext[i]))
         {
-        printf("ciphertext: %c", (((plaintext[i] - 65) + key) % 26) + 65);
+        printf("%c", (((plaintext[i] - 65) + key) % 26) + 65);
         
         }
         //same for lowercase
         else  
         {
-        printf("ciphertext: %c", (((plaintext[i] - 97) + key) % 26) + 97);
+        printf("%c", (((plaintext[i] - 97) + key) % 26) + 97);
         }
       
       }
        else 
        {
-        printf("ciphertext: %c", (plaintext[i]));
+        printf("%c", (plaintext[i]));
        }
       
     }
