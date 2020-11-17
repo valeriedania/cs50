@@ -46,15 +46,13 @@ int main(int argc, string argv[])
     plaintext_length = strlen(plaintext);
     
     //Use a loop to iterate over every char in text
-    printf("ciphertext: ");
-    
-    for (int i = 0; i != '\0'; i++)
+    for (int i = 0; i < plaintext_length; i++)
     {
       //check if char is a letter
-      if (isalpha(plaintext[i]) != 0)
+      if (isalpha(plaintext[i]))
       {
         //check for uppercase
-        if (isupper(plaintext[i]) != 0)
+        if (isupper(plaintext[i]))
         {
         printf("%c", (((plaintext[i] - 65) + key) % 26) + 65);
         
