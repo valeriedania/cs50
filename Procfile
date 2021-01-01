@@ -1,2 +1,2 @@
-web: gunicorn application:virtual-stock-portfolio-cs50
+web: gunicorn application:app
 
